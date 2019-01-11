@@ -1,0 +1,47 @@
+[{
+    "_id": "_fn$purchaseOrderPredsReq",
+    "name": "purchaseOrderPredsReq",
+    "code": "(and (required \"purchaseOrder/id\") (required \"purchaseOrder/product\") (required \"purchaseOrder/issuer\") (required \"purchaseOrder/issueDate\") (required \"purchaseOrder/name\"))",
+    "doc": "Required predicates: id, product, issuer, issueDate, name."
+},
+{
+    "_id": "_fn$shipmentPredsReq",
+    "name": "shipmentPredsReq",
+    "code": "(and (required \"shipment/id\") (required \"shipment/name\") (required \"shipment/sentBy\")  (required \"shipment/sentDate\") (required \"shipment/sentLocation\") (required \"shipment/itemDescription\") (required \"shipment/sentSignature\") (required \"shipment/shipper\") (required \"shipment/intendedRecipient\") (required \"shipment/intendedRecipientLocation\"))",
+    "doc": "Required shipment predicates: id, name, sentBy, sentDate, sentLocaation, itemDescription, shipper, intendedRecipient, intendedRecipientLocation."
+},
+{
+    "_id": "_fn$onlyCafeCreate",
+    "name": "onlyCafeCreate",
+    "code": "(if-else (new?) (authIsCafe?) false)",
+    "doc": "When creating a new purchaseOrder, if the auth record is connected to a cafe, allow, else return false."
+},
+{
+    "_id": "_fn$unchangeable",
+    "name": "unchangeable",
+    "code": "(if-else (new?) true false)",
+    "doc": "Add to a predicate to make it unchangeable."
+},
+{
+    "_id": "_fn$sentSignatureEqualsSentBy",
+    "name": "sentSignatureEqualsSentBy",
+    "code": "(== (get (?s) \"shipment/sentBy\") (get (?s) \"shipment/sentSignature\"))",
+    "doc": "shipment/sentSignature has to be same person as shipment/sentBy"
+},
+{
+    "_id": "_fn$sentSignatureShipperGPSRequiredTogether",
+    "name": "sentSignatureShipperGPSRequiredTogether",
+    "code": "(if-else (or (sentSignature?) (GPSLocation?) (shipper?)) (and (sentSignature?) (GPSLocation?) (shipper?)) true)"
+},
+{
+    "_id": "_fn$recipientIsIntended",
+    "name": "recipientIsIntended",
+    "code": "(== (get (?s) \"shipment/sentBy\") (get (?s) \"shipment/sentSignature\"))"
+},
+{
+    "_id": "_fn$chainOfApproval",
+    "name": "chainOfApproval",
+    "doc": "Checks who what type of auth org is, and enforces chain of approval",
+    "code": "(if-else (authIsCafe?) (not (growerApprovedPO?)) (if-else (authIsGrower?) (and (cafeApprovedPO?) (not (roasterApprovedPO?))) (if-else (authIsRoaster?) (growerApprovedPO?) false))))"
+}]
+
