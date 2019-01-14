@@ -12,7 +12,7 @@ intentionally or accidentally going around the allowed steps.  */
     "_id": "purchaseOrder",
     "id": "124",
     "name": "myPurchaseOrder2",
-    "issuer": ["organization/name", "Cup o' Winston"],
+    "issuer": ["organization/name", "Coffee on the Block"],
     "issueDate": "#(now)",
     "product": {
         "_id": "product",
@@ -51,7 +51,7 @@ intentionally or accidentally going around the allowed steps.  */
 },
 {
     "_id": "_tx",
-    "auth": "cupOWinston"
+    "auth": "coffeeOnTheBlock"
 }]
 
 // Doesn't work - not all necessary predicates
@@ -59,7 +59,7 @@ intentionally or accidentally going around the allowed steps.  */
 [{
     "_id": "purchaseOrder",
     "id": "124",
-    "issuer": ["organization/name", "Cup o' Winston"],
+    "issuer": ["organization/name", "Coffee on the Block"],
     "issueDate": "#(now)",
     "product": {
         "_id": "product",
@@ -74,7 +74,7 @@ intentionally or accidentally going around the allowed steps.  */
 },
 {
     "_id": "_tx",
-    "auth": "cupOWinston"
+    "auth": "coffeeOnTheBlock"
 }]
 
 // Doesn't work - Can't create a shipment without connecting it to a purchase order

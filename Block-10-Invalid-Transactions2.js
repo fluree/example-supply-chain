@@ -22,11 +22,11 @@ intentionally or accidentally going around the allowed steps.  */
 
 [{
     "_id": ["purchaseOrder/id", "123"],
-    "approved": [["organization/name", "Cup o' Winston"]]
+    "approved": [["organization/name", "Coffee on the Block"]]
 },
 {
     "_id": "_tx",
-    "auth": "cupOWinston"
+    "auth": "coffeeOnTheBlock"
 }]
 
 // 

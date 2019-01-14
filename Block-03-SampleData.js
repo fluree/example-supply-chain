@@ -1,13 +1,13 @@
 [{
     "_id": "organization",
-    "name": "Cup o' Winston",
+    "name": "Coffee on the Block",
     "type": "cafe",
     "auth": "_auth$1"
 },
 {
     "_id": "organization",
-    "name": "Salem Snacks and Slurps",
-    "type": "cafe",
+    "name": "Ship Shape",
+    "type": "shipper",
     "auth": "_auth$2"
 },
 {
@@ -24,12 +24,12 @@
 },
 {
     "_id": "_auth$1",
-    "id": "cupOWinston",
+    "id": "coffeeOnTheBlock",
     "roles": [["_role/id", "root"]]
 },
 {
     "_id": "_auth$2",
-    "id": "salemSnacksAndSlurps",
+    "id": "shipShape",
     "roles": [["_role/id", "root"]]
 },
 {

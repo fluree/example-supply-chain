@@ -4,7 +4,7 @@
     "_id": "purchaseOrder",
     "id": "123",
     "name": "myPurchaseOrder",
-    "issuer": ["organization/name", "Cup o' Winston"],
+    "issuer": ["organization/name", "Coffee on the Block"],
     "issueDate": "#(now)",
     "product": {
         "_id": "product",
@@ -19,6 +19,6 @@
 },
 {
     "_id": "_tx",
-    "auth": "cupOWinston"
+    "auth": "coffeeOnTheBlock"
 }]
 
