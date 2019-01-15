@@ -6,7 +6,10 @@ intentionally or accidentally going around the allowed steps.  */
 
 // Step 2. Once the cafe is happy with their order, they approve the PO. 
 
-// Doesn't work, purchaseOrder not signed yet
+/* Without the cafe's name in purchaseOrder/approved, the following transactions 
+cannot be issued: */
+
+// Can't add a grower to the purchaseOrder
 
 [{
     "_id": ["purchaseOrder/id", "123"],
@@ -18,18 +21,7 @@ intentionally or accidentally going around the allowed steps.  */
 }]
 
 
-// Step 1.5 Cafe Needs to Sign PurchaseOrder
-
-[{
-    "_id": ["purchaseOrder/id", "123"],
-    "approved": [["organization/name", "Coffee on the Block"]]
-},
-{
-    "_id": "_tx",
-    "auth": "coffeeOnTheBlock"
-}]
-
-// 
+// Can't create a shipment
 
 [{
     "_id": "shipment$1",

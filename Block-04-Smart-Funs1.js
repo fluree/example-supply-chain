@@ -51,21 +51,21 @@
 {
     "_id": "_fn$sentSignature?",
     "name": "sentSignature?",
-    "code": "(nil? (get (?s) \"shipment/sentSignature\"))"
+    "code": "(if-else (nil? (get-all (?s) [\"shipment/sentSignature\" \"_id\"])) false true)"
 },
 {
     "_id": "_fn$GPSLocation?",
     "name": "GPSLocation?",
-    "code": "(nil? (get (?s) \"shipment/GPSLocation\"))"
+    "code": "(if-else (nil? (get (?s) \"shipment/GPSLocation\")) false true)"
 },
 {
     "_id": "_fn$shipper?",
     "name": "shipper?",
-    "code": "(nil? (get (?s) \"shipment/shipper\"))"
+    "code": "(if-else (nil? (get (?s) \"shipment/shipper\")) false true)"
 },
 {
-    "_id": "_fn$",
+    "_id": "_fn$purchaseOrderReceivedSignaturesAuth",
     "name": "purchaseOrderReceivedSignaturesAuth",
-    "code": "(get-all (?s \"[{purchaseOrder/_shipments [{shipment/receivedSignature [{ organization/auth [_id ]}]}]}]\") [\"purchaseOrder/_shipments\" \"shipment/receivedSignature\" \"organization/auth\" \"_id\"]))",
-    "doc": "Gets all the auth records from the receivedSignatures from purchaseOrder/_shipments."
+    "code": "(get-all (?s \"[{purchaseOrder/shipments [{shipment/receivedSignature [{ organization/auth [_id ]}]}]}]\") [\"purchaseOrder/shipments\" \"shipment/receivedSignature\" \"organization/auth\" \"_id\"]))",
+    "doc": "Gets all the auth records from the receivedSignatures from purchaseOrder/shipments."
 }]

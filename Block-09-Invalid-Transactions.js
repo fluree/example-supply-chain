@@ -4,7 +4,7 @@ In an application, you should have a user interface that makes it very easy to p
 right transactions at the right time. Smart functions prevent a rogue participant from 
 intentionally or accidentally going around the allowed steps.  */
 
-// Step 1. A cafe creates a purchase order.
+// Step 1. A roaster creates a purchase order.
 
 // Doesn't work - not a cafe
 
@@ -12,7 +12,7 @@ intentionally or accidentally going around the allowed steps.  */
     "_id": "purchaseOrder",
     "id": "124",
     "name": "myPurchaseOrder2",
-    "issuer": ["organization/name", "Coffee on the Block"],
+    "issuer": ["organization/name", "The Roastery"],
     "issueDate": "#(now)",
     "product": {
         "_id": "product",
@@ -36,7 +36,7 @@ intentionally or accidentally going around the allowed steps.  */
     "_id": "purchaseOrder",
     "id": "124",
     "name": "myPurchaseOrder2",
-    "issuer": ["organization/name", "Salem Snacks and Slurps"],
+    "issuer": ["organization/name", "Coffee on the Block"],
     "issueDate": "#(now)",
     "product": {
         "_id": "product",
@@ -51,7 +51,7 @@ intentionally or accidentally going around the allowed steps.  */
 },
 {
     "_id": "_tx",
-    "auth": "coffeeOnTheBlock"
+    "auth": "mcDonaldsFarm"
 }]
 
 // Doesn't work - not all necessary predicates

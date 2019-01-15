@@ -7,8 +7,8 @@
 {
     "_id": "_fn$shipmentPredsReq",
     "name": "shipmentPredsReq",
-    "code": "(and (required \"shipment/id\") (required \"shipment/name\") (required \"shipment/sentBy\")  (required \"shipment/sentDate\") (required \"shipment/sentLocation\") (required \"shipment/itemDescription\") (required \"shipment/sentSignature\") (required \"shipment/shipper\") (required \"shipment/intendedRecipient\") (required \"shipment/intendedRecipientLocation\"))",
-    "doc": "Required shipment predicates: id, name, sentBy, sentDate, sentLocaation, itemDescription, shipper, intendedRecipient, intendedRecipientLocation."
+    "code": "(and (required \"shipment/id\") (required \"shipment/name\") (required \"shipment/sentBy\")  (required \"shipment/sentDate\") (required \"shipment/sentLocation\") (required \"shipment/itemDescription\") (required \"shipment/sentSignature\") (required \"shipment/intendedRecipient\") (required \"shipment/intendedReceiptLocation\"))",
+    "doc": "Required shipment predicates: id, name, sentBy, sentDate, sentLocaation, itemDescription, intendedRecipient, intendedReceiptLocation."
 },
 {
     "_id": "_fn$onlyCafeCreate",
@@ -29,9 +29,9 @@
     "doc": "shipment/sentSignature has to be same person as shipment/sentBy"
 },
 {
-    "_id": "_fn$sentSignatureShipperGPSRequiredTogether",
-    "name": "sentSignatureShipperGPSRequiredTogether",
-    "code": "(if-else (or (sentSignature?) (GPSLocation?) (shipper?)) (and (sentSignature?) (GPSLocation?) (shipper?)) true)"
+    "_id": "_fn$shipperGPSRequiredTogether",
+    "name": "shipperGPSRequiredTogether",
+    "code": "(if-else (or (GPSLocation?) (shipper?)) (and (sentSignature?) (GPSLocation?) (shipper?)) true)"
 },
 {
     "_id": "_fn$recipientIsIntended",
