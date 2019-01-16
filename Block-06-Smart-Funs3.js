@@ -17,6 +17,12 @@
     "doc": "Returns true if issuing auth record is connected to a organization of type cafe."
 },
 {
+    "_id": "_fn$authIsShipper?",
+    "name": "authIsShipper?",
+    "code": "(contains? (authOrgType) \"organization/type:shipper\")",
+    "doc": "Returns true if issuing auth record is connected to a organization of type shipper."
+},
+{
     "_id": "_fn$isGrower?",
     "name": "isGrower?",
     "code": "(contains? (orgType) \"organization/type:grower\")",
@@ -33,6 +39,12 @@
     "name": "isCafe",
     "code": "(contains? (orgType) \"organization/type:cafe\")",
     "doc": "Returns true if object is an organization of type cafe."
+},
+{
+    "_id": "_fn$isShipper?",
+    "name": "isShipper",
+    "code": "(contains? (orgType) \"organization/type:shipper\")",
+    "doc": "Returns true if object is an organization of type shipper."
 },
 {
     "_id": "_fn$orgAuthIsSelf?",

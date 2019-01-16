@@ -11,9 +11,9 @@
 {
     "select": ["?purchaseOrder", "?name"],
     "where": [
-        ["$fdb95", "?purchaseOrder", "purchaseOrder/approved", "?organization"],
-        ["$fdb95", "?organization", "organization/type", "organization/type:roaster"],
-        ["$fdb95", "?organization", "organization/name", "?name"]]
+        ["$fdb35", "?purchaseOrder", "purchaseOrder/approved", "?organization"],
+        ["$fdb35", "?organization", "organization/type", "organization/type:roaster"],
+        ["$fdb35", "?organization", "organization/name", "?name"]]
 }
 
 

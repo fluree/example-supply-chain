@@ -79,4 +79,12 @@
     "_id": ["_predicate/name", "shipment/receivedSignature"],
     "spec": [["_fn/name", "sentSignature?"], ["_fn/name", "recipientIsIntended"], ["_fn/name", "orgAuthIsSelf?"]],
     "specDoc": "Can only add receivedSignature if it's you and you are the intendedRecipient, and a sentSignature present."
+},
+{
+    "_id": ["_predicate/name", "shipment/shipper"],
+    "spec": [["_fn/name", "authIsShipper?"], ["_fn/name", "orgAuthIsSelf?"]]
+},
+{
+    "_id": ["_predicate/name", "shipment/GPSLocation"],
+    "spec": [["_fn/name", "authIsShipper?"]]
 }]
