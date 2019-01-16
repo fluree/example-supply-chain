@@ -41,9 +41,7 @@ but they are portrayed separately here for clarity. */
         "sentSignature": ["organization/name", "The Roastery"],
         "itemDescription": "Got the beans roasted!",
         "intendedRecipient": ["organization/name", "Coffee on the Block"],
-        "intendedReceiptLocation": "Portland, OR",
-        "shipper": ["organization/name", "Ship Shape"],
-        "GPSLocation": "25.7825453,-80.2994987"
+        "intendedReceiptLocation": "Portland, OR"
     }]
 },
 {
@@ -56,6 +54,7 @@ but they are portrayed separately here for clarity. */
 // Block 22
 [{
     "_id": ["shipment/id", "roasterShip123"],
+    "shipper": ["organization/name", "Ship Shape"],
     "GPSLocation": "32.8205865,-96.8716267"
 },
 {

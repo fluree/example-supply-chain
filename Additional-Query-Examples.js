@@ -11,9 +11,10 @@
 {
     "select": ["?purchaseOrder", "?name"],
     "where": [
-        ["$fdb35", "?purchaseOrder", "purchaseOrder/approved", "?organization"],
-        ["$fdb35", "?organization", "organization/type", "organization/type:roaster"],
-        ["$fdb35", "?organization", "organization/name", "?name"]]
+        ["?purchaseOrder", "purchaseOrder/approved", "?organization"],
+        ["?organization", "organization/type", "organization/type:roaster"],
+        ["?organization", "organization/name", "?name"]],
+    "block": 25
 }
 
 
@@ -23,13 +24,13 @@
 {
     "select": ["?strainName", "(sum ?pounds)", "(count ?purchaseOrder)"],
     "where": [
-        ["$fdb95", "?purchaseOrder", "purchaseOrder/approved", "?organization"],
-        ["$fdb95", "?organization", "organization/type", "organization/type:cafe"],
-        ["$fdb95", "?purchaseOrder", "purchaseOrder/product", "?product"],
-        ["$fdb95", "?product", "product/strain", "?strain"],
-        ["$fdb95", "?strain", "_tag/id", "?strainName"],
-        ["$fdb95", "?product", "product/quantity", "?pounds"],
-        ["$fdb95", "?product", "product/unitOfMeasure", "lb"]
+        ["?purchaseOrder", "purchaseOrder/approved", "?organization"],
+        ["?organization", "organization/type", "organization/type:cafe"],
+        ["?purchaseOrder", "purchaseOrder/product", "?product"],
+        ["?product", "product/strain", "?strain"],
+        ["?strain", "_tag/id", "?strainName"],
+        [ "?product", "product/quantity", "?pounds"],
+        ["?product", "product/unitOfMeasure", "lb"]
         ],
     "prettyPrint": true
 }
