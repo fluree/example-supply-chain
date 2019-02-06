@@ -11,7 +11,7 @@
 {
     "_id": ["_predicate/name", "purchaseOrder/id"],
     "spec": [["_fn/name", "onlyCafeCreate"], 
-        ["_fn/name", "unchangeable"]],
+        ["_fn/name", "new?"]],
     "specDoc": "Only a cafe can create a purchaseOrder/id, and it's unchangeable."
 },
 {

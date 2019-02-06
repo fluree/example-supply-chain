@@ -17,12 +17,6 @@
     "doc": "When creating a new purchaseOrder, if the auth record is connected to a cafe, allow, else return false."
 },
 {
-    "_id": "_fn$unchangeable",
-    "name": "unchangeable",
-    "code": "(if-else (new?) true false)",
-    "doc": "Add to a predicate to make it unchangeable."
-},
-{
     "_id": "_fn$sentSignatureEqualsSentBy",
     "name": "sentSignatureEqualsSentBy",
     "code": "(== (get (?s) \"shipment/sentBy\") (get (?s) \"shipment/sentSignature\"))",
@@ -36,7 +30,8 @@
 {
     "_id": "_fn$recipientIsIntended",
     "name": "recipientIsIntended",
-    "code": "(== (get (?s) \"shipment/sentBy\") (get (?s) \"shipment/sentSignature\"))"
+    "code": "(== (get (?s) \"shipment/intendedRecipient \") (get (?s) \"shipment/receivedSignature\"))",
+    "doc": "shipment/intendedRecipient has to be same person as shipment/receivedSignature."
 },
 {
     "_id": "_fn$chainOfApproval",
