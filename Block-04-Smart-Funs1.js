@@ -66,6 +66,6 @@
 {
     "_id": "_fn$purchaseOrderReceivedSignaturesAuth",
     "name": "purchaseOrderReceivedSignaturesAuth",
-    "code": "(get-all (?s \"[{purchaseOrder/shipments [{shipment/receivedSignature [{ organization/auth [_id ]}]}]}]\") [\"purchaseOrder/shipments\" \"shipment/receivedSignature\" \"organization/auth\" \"_id\"]))",
+    "code": "(get-all (?s \"[{purchaseOrder/shipments [{shipment/receivedSignature [{ organization/auth [_id ]}]}]}]\") [\"purchaseOrder/shipments\" \"shipment/receivedSignature\" \"organization/auth\" \"_id\"])",
     "doc": "Gets all the auth records from the receivedSignatures from purchaseOrder/shipments."
 }]
