@@ -7,6 +7,8 @@ intentionally or accidentally going around the allowed steps.  */
 // Step 1. A roaster creates a purchase order.
 
 // Doesn't work - not a cafe
+// Signed with The Roastery's _auth/id: TfA6vquJMH65oQttpuURWvGnMdPPdAA69PF 
+// And private key: 36abfcd2da19781550d6c9296ada95e11ef0ebfe9acdf3723e59098dc41fe8a5
 
 [{
     "_id": "purchaseOrder",
@@ -24,14 +26,11 @@ intentionally or accidentally going around the allowed steps.  */
         "quantity": 100,
         "unitOfMeasure": "lb"
     }
-},
-{
-    "_id": "_tx",
-    "auth": "roastery"
 }]
 
 // Doesn't work - attempting to list purchaseOrder issuer as someone other than themselves
-
+// Signed with McDonald's Farm's _auth/id: Tf2hxnc1FzAXtmk8ptwQ5V68zJjfd4tLwXL 
+// And private key: 5ce7259de6397b6dbdd727fc62e9a920f41fe3017dbd76cba3f8d0c1f0275113
 [{
     "_id": "purchaseOrder",
     "id": "124",
@@ -48,14 +47,11 @@ intentionally or accidentally going around the allowed steps.  */
         "quantity": 100,
         "unitOfMeasure": "lb"
     }
-},
-{
-    "_id": "_tx",
-    "auth": "mcDonaldsFarm"
 }]
 
 // Doesn't work - not all necessary predicates
-
+// Signed with Coffee on the Block's _auth/id: Tf2j3SoemdjeTfi8t1CxjaYNmUZpWT3A8RD 
+// And private key: 8a9077ab011fb152b5a043abc24c535810b5dd1d87ecd6ace7cb454dd046670b
 [{
     "_id": "purchaseOrder",
     "id": "124",
@@ -71,13 +67,11 @@ intentionally or accidentally going around the allowed steps.  */
         "quantity": 100,
         "unitOfMeasure": "lb"
     }
-},
-{
-    "_id": "_tx",
-    "auth": "coffeeOnTheBlock"
 }]
 
 // Doesn't work - Can't create a shipment without connecting it to a purchase order
+// Signed with McDonald's Farm's _auth/id: Tf2hxnc1FzAXtmk8ptwQ5V68zJjfd4tLwXL 
+// And private key: 5ce7259de6397b6dbdd727fc62e9a920f41fe3017dbd76cba3f8d0c1f0275113
 
 [{
     "_id": "shipment$1",
@@ -89,8 +83,4 @@ intentionally or accidentally going around the allowed steps.  */
     "itemDescription": "Got the beans harvested!",
     "intendedRecipient": ["organization/name", "The Roastery"],
     "intendedReceiptLocation": "Miami, FL"
-},
-{
-    "_id": "_tx",
-    "auth": "mcDonaldsFarm"
 }]

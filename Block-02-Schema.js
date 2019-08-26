@@ -251,4 +251,16 @@
     "restrictCollection": "organization",
     "multi": true,
     "doc": "End user app can use this to notify the relevant organizations of an event."
+},
+{
+    "_id": "_fn$s",
+    "name": "s",
+    "code": "(query (str \"{\\\"select\\\": [\\\"*\\\"], \\\"from\\\":\" (?sid) \"}\"))",
+    "doc": "Get * from subject id."
+},
+{
+    "_id": "_predicate",
+    "name": "_auth/descId",
+    "type": "string",
+    "unique": true
 }]
