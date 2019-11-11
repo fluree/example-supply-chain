@@ -2,7 +2,7 @@
     "_id": "_fn$required",
     "name": "required",
     "params": ["predicate"],
-    "code": "(boolean (get (s) predicate))",
+    "code": "(boolean (get (?s) predicate))",
     "doc": "This predicate is required. Add to collection spec"
 },
 {
@@ -51,12 +51,12 @@
 {
     "_id": "_fn$sentSignature?",
     "name": "sentSignature?",
-    "code": "(if-else (nil? (get-all (s) [\"shipment/sentSignature\" \"_id\"])) false true)"
+    "code": "(if-else (nil? (get-all (?s) [\"shipment/sentSignature\" \"_id\"])) false true)"
 },
 {
     "_id": "_fn$GPSLocation?",
     "name": "GPSLocation?",
-    "code":   "(if-else (nil? (get-all (s) [\"shipment/GPSLocation\"])) false true)"
+    "code":   "(if-else (nil? (get-all (?s) [\"shipment/GPSLocation\"])) false true)"
 },
 {
     "_id": "_fn$shipper?",

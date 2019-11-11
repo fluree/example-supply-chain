@@ -19,7 +19,7 @@
 {
     "_id": "_fn$sentSignatureEqualsSentBy",
     "name": "sentSignatureEqualsSentBy",
-    "code": "(== (get (s) \"shipment/sentBy\") (get (s) \"shipment/sentSignature\"))",
+    "code": "(== (get (?s) \"shipment/sentBy\") (get (?s) \"shipment/sentSignature\"))",
     "doc": "shipment/sentSignature has to be same person as shipment/sentBy"
 },
 {
@@ -30,7 +30,7 @@
 {
     "_id": "_fn$recipientIsIntended",
     "name": "recipientIsIntended",
-    "code": "(== (get (s) \"shipment/intendedRecipient\") (get (s) \"shipment/receivedSignature\"))",
+    "code": "(== (get (?s) \"shipment/intendedRecipient\") (get (?s) \"shipment/receivedSignature\"))",
     "doc": "shipment/intendedRecipient has to be same person as shipment/receivedSignature."
 },
 {
