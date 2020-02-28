@@ -1,0 +1,130 @@
+[
+    {
+        "_id": "_fn$new?",
+        "name": "new?",
+        "code": "(nil? (?pO))",
+        "doc": "Checks whether previous value was nil."
+    },
+    {
+        "_id": "_fn$required",
+        "name": "required",
+        "params": ["predicate"],
+        "code": "(boolean (get (?s) predicate))",
+        "doc": "This predicate is required. Add to collection spec"
+    },
+    {
+        "_id": "_fn$shipmentConnectedToPO?",
+        "name": "shipmentConnectedToPO?",
+        "doc": "Checks if there is any shipment connected to the purchase",
+        "code":  "(if-else (== 0 (count (get-all (query (str \"{ \\\"select\\\": [{\\\"purchaseOrder/_shipments\\\": [\\\"_id\\\"]}],\\n   \\\"from\\\": \" (?sid) \"}\"))[\"purchaseOrder/_shipments\" \"_id\"]))) false true)"
+    },
+    {
+        "_id": "_fn$GPSLocation?",
+        "name": "GPSLocation?",
+        "code":   "(if-else (== 0 (count (get-all (?s) [\"shipment/GPSLocation\"]))) false true)"
+    },
+    
+    {
+        "_id": "_fn$sentSignature?",
+        "name": "sentSignature?",
+        "code": "(if-else (== 0 (count (get-all (?s) [\"shipment/sentSignature\" \"_id\"]))) false true)"
+    },
+    {
+        "_id": "_fn$shipper?",
+        "name": "shipper?",
+        "code":   "(if-else (== 0 (count (get-all (query (str \"{\\\"select\\\": [\\\"*\\\"], \\\"from\\\": \" (?sid) \"}\")) [\"shipment/shipper\" \"_id\"]))) false true)"
+    },
+    {
+        "_id": "_fn$authIsCafe?",
+        "name": "authIsCafe?",
+        "code": "(relationship? (?auth_id) [\"organization/_auth\" \"organization/type\"] [\"_tag/id\", \"organization/type:cafe\"])",
+        "doc": "Returns true if issuing auth record is connected to a organization of type cafe."
+    },
+    {
+        "_id": "_fn$authIsGrower?",
+        "name": "authIsGrower?",
+        "code": "(relationship? (?auth_id) [\"organization/_auth\" \"organization/type\"] [\"_tag/id\", \"organization/type:grower\"])",
+        "doc": "Returns true if issuing auth record is connected to a organization of type grower."
+    },
+    {
+        "_id": "_fn$orgAuthIsSelf?",
+        "name": "orgAuthIsSelf?",
+        "code": "(relationship? (?o) [\"organization/auth\"] (?auth_id))",
+        "doc": "Returns true if the organization's auth matches the auth that signed the transaction"
+    },
+    {
+        "_id": "_fn$cafeApprovedPO?",
+        "name": "cafeApprovedPO?",
+        "code": "(relationship? (?sid) [\"purchaseOrder/approved\" \"organization/type\"] [\"_tag/id\", \"organization/type:cafe\"])"
+    },
+    {
+        "_id": "_fn$growerApprovedPO?",
+        "name": "growerApprovedPO?",
+        "code": "(relationship? (?sid) [\"purchaseOrder/approved\" \"organization/type\"] [\"_tag/id\", \"organization/type:grower\"])"
+    },
+    {
+        "_id": "_fn$roasterApprovedPO?",
+        "name": "roasterApprovedPO?",
+        "code": "(relationship? (?sid) [\"purchaseOrder/approved\" \"organization/type\"] [\"_tag/id\", \"organization/type:roaster\"])"
+    },
+    {
+        "_id": "_fn$authIsRoaster?",
+        "name": "authIsRoaster?",
+        "code": "(relationship? (?auth_id) [\"organization/_auth\" \"organization/type\"] [\"_tag/id\", \"organization/type:roaster\"])",
+        "doc": "Returns true if issuing auth record is connected to a organization of type roaster"
+    },
+    {
+        "_id": "_fn$authIsShipper?",
+        "name": "authIsShipper?",
+    
+        "code": "(relationship? (?auth_id) [\"organization/_auth\" \"organization/type\"] [\"_tag/id\", \"organization/type:shipper\"])",
+        
+        "doc": "Returns true if issuing auth record is connected to an organization of type shipper."
+    },
+    {
+        "_id": "_fn$isGrower?",
+        "name": "isGrower?",
+        "code": "(relationship? (?o) [\"organization/type\"] \"organization/type:grower\")",
+        "doc": "Returns true if object is an organization of type grower."
+    },
+    {
+        "_id": "_fn$isRoaster?",
+        "name": "isRoaster?",
+        "code":  "(relationship? (?o) [\"organization/type\"] \"organization/type:roaster\")",
+        "doc": "Returns true if object is an organization of type roaster"
+    },
+    {
+        "_id": "_fn$isCafe?",
+        "name": "isCafe",
+        "code":  "(relationship? (?o) [\"organization/type\"] \"organization/type:cafe\")",
+        "doc": "Returns true if object is an organization of type cafe."
+    },
+    {
+        "_id": "_fn$isShipper?",
+        "name": "isShipper",
+        "code":  "(relationship? (?o) [\"organization/type\"] \"organization/type:shipper\")",
+        "doc": "Returns true if object is an organization of type shipper."
+    },
+    {
+        "_id": "_fn$recipientIsIntended",
+        "name": "recipientIsIntended",
+        "code": "(== (get (?s) \"shipment/intendedRecipient\") (get (?s) \"shipment/receivedSignature\"))",
+        "doc": "shipment/intendedRecipient has to be same person as shipment/receivedSignature."
+    },
+    {
+        "_id": "_fn$sentSignatureEqualsSentBy",
+        "name": "sentSignatureEqualsSentBy",
+        "code": "(== (get (?s) \"shipment/sentBy\") (get (?s) \"shipment/sentSignature\"))",
+        "doc": "shipment/sentSignature has to be same person as shipment/sentBy"
+    },
+    {
+        "_id": "_fn$senderApprovedPO",
+        "name": "senderApprovedPO",
+        "code": "(relationship? (?sid) [\"purchaseOrder/_shipments\" \"purchaseOrder/approved\" \"shipment/_sentBy\"] (?sid))"
+    },
+    {
+        "_id": "_fn$receivedSignatureIsSelf",
+        "name": "didAuthRecieveShipment?",
+        "code": "(relationship? (?sid) [\"purchaseOrder/shipments\" \"shipment/receivedSignature\" \"organization/auth\"] (?auth_id))"
+    }]
+    
