@@ -18,7 +18,7 @@ Features demonstrated: `smart functions`.
 
 Download and unzip this [Fluree packet](https://fluree-examples.s3.amazonaws.com/supply-chain-packet.zip). The packet contains Fluree, version 0.13.0, as well as a prepopulated database with the schema, seed data, smart functions, and purchase orders (you can find these transactions in `resources/`).
 
-Navigate to the folder where you downloaded the packet, and run `./fluree_start.sh`. If you have Java 8+ installed, this should launch Fluree, and a Admin Console will be available for you to explore at `http://localhost:8080`. `resources/example_queries.js` has example queries you can test out directly in the Admin Console.
+Navigate to the folder where you downloaded the packet, and run `./fluree_start.sh`. If you have Java 8+ installed, this should launch Fluree, and a Admin Console will be available for you to explore at `http://localhost:8080/index.html`. `resources/example_queries.js` has example queries you can test out directly in the Admin Console.
 
 2. `Start the App`
 
