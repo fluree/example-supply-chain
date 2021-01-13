@@ -1,5 +1,5 @@
 {
-    "ip": "http://localhost:8080",
+    "ip": "http://db:8080",
     "network": "supply",
     "db": "chain"
 }
