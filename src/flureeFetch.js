@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
-const url = "http://localhost:8080/fdb/supply/chain/";
+const url = "http://db:8080/fdb/supply/chain/";
 
 function parseJSON(response) {
   return response.json().then(function (json) {
