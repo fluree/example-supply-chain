@@ -72,13 +72,22 @@ There are other example queries that you can try out in `/resources/example_quer
 
 #### Visual Studio Code
 
+#### Extension
 If you are using Visual Studio Code to view this repo, you can issue the example queries using the extension. 
 
-1. Download the `Fluree: Beta` extension. In the top menu bar, select `View` > `Extensions`. Then search `Fluree: Beta` and click install.
+1. Install the `Fluree: Beta` extension. In the top menu bar, select `View` > `Extensions`. Then search `Fluree: Beta` and click install.
 2. Open the Command Palette by going to `View` > `Command Palette`, and issue `Fluree: Set Config`. 
 3. Highlight any query in `resources/example_queries.js`, using the Command Palette, issue, `Fluree: Query`, and the results of the query will appear in a `flureeResponse.txt` file. Note: every time you issue a query or transaction, this file gets overwritten.
 
 ![Visual Studio Code Extension](public/vscode.gif)
+
+#### Devcontainer
+1. Install the `Remote - Containers` extension from Microsoft. In the top menu bar, select `View` > `Extensions`. Then search `Remote - Containers` and click install.
+2. Open the Command Palette and search for 'Open Workspace in Container...'. Select 'Open Workspace in Container'. 
+3. Once the containers are built and running you'll have a Fluree Admin console running that you can view by going to 'http://localhost:8080' in your browser.
+4. Create a ledger called 'supply/chain'.
+5. Use transactions to load the schema.json, seed.json, smart-function-1.json and smart-function-2.json from the resources folder.
+6. in the VS Code terminal run `npm install` and `npm start` to start the app.
 
 ### Resources
 
