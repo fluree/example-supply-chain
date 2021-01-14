@@ -1,6 +1,8 @@
 import fetch from 'isomorphic-fetch';
 
-const url = "http://db:8080/fdb/supply/chain/";
+const host = process.env.REACT_APP_FLUREE_HOST;
+console.log(host);
+const url = `http://${host}:8080/fdb/supply/chain/`;
 
 function parseJSON(response) {
   return response.json().then(function (json) {
