@@ -1,0 +1,20 @@
+version: '3'
+services:
+  db:
+    image: fluree/ledger:master
+    restart: always
+    ports:
+      - 8080:8080
+  app:
+    image: node:latest
+    environment: 
+      - REACT_APP_FLUREE_HOST=db
+    volumes:
+      - ..:/workspace
+      - ~/.gitconfig:/root/.gitconfig
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+    ports:
+      - '3000:3000'
+    command: sleep infinity
+    depends_on:
+      - db
