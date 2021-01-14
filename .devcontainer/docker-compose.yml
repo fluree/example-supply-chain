@@ -7,8 +7,6 @@ services:
       - 8080:8080
   app:
     image: node:latest
-    environment: 
-      - REACT_APP_FLUREE_HOST=db
     volumes:
       - ..:/workspace
       - ~/.gitconfig:/root/.gitconfig
