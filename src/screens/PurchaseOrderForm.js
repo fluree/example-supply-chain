@@ -155,7 +155,7 @@ class PurchaseOrderForm extends Component {
 
       const txn = [po];
 
-      const db = "supply/chain";
+      const db = process.env.REACT_APP_FLUREE_DB;
       const expire = Date.now() + 1000;
       const fuel = 100000;
       const nonce = Math.floor(Math.random() * 1000) 

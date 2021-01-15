@@ -1,8 +1,10 @@
 import fetch from 'isomorphic-fetch';
 
 const host = process.env.REACT_APP_FLUREE_HOST;
+const db = process.env.REACT_APP_FLUREE_DB;
+const endpoint = process.env.REACT_APP_FLUREE_ENDPOINT;
 console.log(host);
-const url = `http://${host}:8080/fdb/supply/chain/`;
+const url = `http://${host}:8080/${endpoint}/${db}/`;
 
 function parseJSON(response) {
   return response.json().then(function (json) {

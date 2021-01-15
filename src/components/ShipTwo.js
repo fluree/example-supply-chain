@@ -68,7 +68,7 @@ class ShipTwo extends Component {
                 "sentSignature": ["organization/name", sentSignature]
             }]
   
-        const db = "supply/chain";
+        const db = process.env.REACT_APP_FLUREE_DB;
         const expire = Date.now() + 1000;
         const fuel = 100000;
         const nonce = Math.floor(Math.random() * 1000) 
