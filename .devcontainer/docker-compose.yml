@@ -14,5 +14,6 @@ services:
     ports:
       - '3000:3000'
     command: sleep infinity
+    network_mode: service:db
     depends_on:
       - db
