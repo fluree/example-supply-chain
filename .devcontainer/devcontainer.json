@@ -1,11 +1,12 @@
 // See https://aka.ms/vscode-remote/containers for the
 // documentation about the devcontainer.json format
 {
-    "name": "Fluree Project",
+    "name": "Fluree Example Supply Chain",
     "dockerComposeFile": "docker-compose.yml",
     "service": "app",
     "workspaceFolder": "/workspace",
     "shutdownAction": "stopCompose",
-    "extensions": []
+    "extensions": [],
+    "forwardPorts": [3000, 8080]
 }
   
